@@ -134,7 +134,7 @@ The latest PubMed baseline, questio-answer pairs (Task A), and topics (task B) w
 ## Participation
 Please follow the TREC 2025 registration guidelines from their <a href="https://trec.nist.gov/cfp.html" target="_blank">Call for Participation</a>. 
 
-## Coomunication
+## Communication
 Once you complete the NIST registration process, you should receive an invitation to NIST’s workspace and be granted access to our slack channel: <a href="https://nistgov.slack.com/archives/C08BU4AF3HB" target="_blank">#trec-biogen-2025</a>. You can also join our Google group [here](https://groups.google.com/g/trec-biogen). T
 
 
