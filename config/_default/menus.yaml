@@ -5,9 +5,6 @@ main:
   - name: Home
     url: /
     weight: 10
-  - name: Task
-    url: /
-    weight: 20
   - name: Contact
     url: contact/
     weight: 50
