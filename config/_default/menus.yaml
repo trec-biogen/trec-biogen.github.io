@@ -8,7 +8,7 @@ main:
   - name: Contact
     url: contact/
     weight: 50
-  - name: GitHub
+  - name: Starter Kit
     url: https://github.com/trec-biogen/starter-kit-2025
     weight: 50
 
