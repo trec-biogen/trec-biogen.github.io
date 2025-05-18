@@ -5,7 +5,6 @@ reading_time: false
 pager: false
 ---
 
-## Support
 
 Contact the organisers at deepak.gupta@nih.gov
 

@@ -1,5 +1,5 @@
 ---
-linkTitle: Task
+linkTitle: Home
 title: TREC 2025 Biomedical Generative Retrieval (BioGen) Track
 ---
 

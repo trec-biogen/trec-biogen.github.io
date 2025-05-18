@@ -3,17 +3,11 @@
 
 main:
   - name: Home
-    url: /
+    url: docs/
     weight: 10
   - name: Task
-    url: /
+    url: docs/
     weight: 20
-  # - name: Timeline
-  #   url: blog/
-  #   weight: 30
-  # - name: Showcase
-  #   url: showcase/
-  #   weight: 40
   - name: Contact
     url: contact/
     weight: 50
