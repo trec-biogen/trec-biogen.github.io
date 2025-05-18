@@ -1,159 +1,91 @@
 ---
 title: 'Home'
+date: 2023-10-24
 type: landing
+
+design:
+  # Default section spacing
+  spacing: "6rem"
+
+sections:
+  - block: hero
+    content:
+      title: 'TREC 2025 Biomedical Generative Retrieval (BioGen) Track'
+      text: TREC 2025 Biomedical Generative Retrieval (BioGen) Track
+      
+      # announcement:
+      #   text: "Announcing the release of version 2."
+      #   link:
+      #     text: "Read more"
+      #     url: "/blog/"
+    design:
+      spacing:
+        padding: [0, 0, 0, 0]
+        margin: [0, 0, 0, 0]
+      # For full-screen, add `min-h-screen` below
+      css_class: ""
+      background:
+        color: ""
+        image:
+          # Add your image background to `assets/media/`.
+          filename: ""
+          filters:
+            brightness: 0.5
+  # - block: stats
+  #   content:
+  #     items:
+  #       - statistic: "1M+"
+  #         description: |
+  #           Websites built  
+  #           with Hugo Blox
+  #       - statistic: "10k+"
+  #         description: |
+  #           GitHub stars  
+  #           since 2016
+  #       - statistic: "3k+"
+  #         description: |
+  #           Discord community  
+  #           for support
+  #   design:
+  #     # Section background color (CSS class)
+  #     css_class: "bg-gray-100 dark:bg-gray-800"
+  #     # Reduce spacing
+  #     spacing:
+  #       padding: ["1rem", 0, "1rem", 0]
+  # - block: features
+  #   id: features
+  #   content:
+  #     title: Features
+  #     text: Collaborate, publish, and maintain technical knowledge with an all-in-one documentation site. Used by 100,000+ startups, enterprises, and researchers.
+  #     items:
+  #       - name: Optimized SEO
+  #         icon: magnifying-glass
+  #         description: Automatic sitemaps, RSS feeds, and rich metadata take the pain out of SEO and syndication.
+  #       - name: Fast
+  #         icon: bolt
+  #         description: Super fast page load with Tailwind CSS and super fast site building with Hugo.
+  #       - name: Easy
+  #         icon: sparkles
+  #         description: One-click deployment to GitHub Pages. Have your new website live within 5 minutes!
+  #       - name: No-Code
+  #         icon: code-bracket
+  #         description: Edit and design your site just using rich text (Markdown) and configurable YAML parameters.
+  #       - name: Highly Rated
+  #         icon: star
+  #         description: Rated 5-stars by the community.
+  #       - name: Swappable Blocks
+  #         icon: rectangle-group
+  #         description: Build your pages with blocks - no coding required!
+  # - block: cta-card
+  #   content:
+  #     title: "Start Writing with the #1 Effortless Documentation Platform"
+  #     text: Hugo Blox Docs Theme brings all your technical knowledge together in a single, centralized knowledge base. Easily search and edit it with the tools you use every day!
+  #     button:
+  #       text: Get Started
+  #       url: https://hugoblox.com/templates/details/docs/
+  #   design:
+  #     card:
+  #       # Card background color (CSS class)
+  #       css_class: "bg-primary-700"
+  #       css_style: ""
 ---
-
-## Introduction
-
-With the advancement of large language models (LLMs), the biomedical domain has seen significant progress and improvement in multiple tasks such as biomedical question answering, lay language summarization of the biomedical literature, clinical note summation, etc. However, hallucinations or confabulations remain one of the key challenges when using LLMs in the biomedical domain. Inaccuracies may be particularly harmful in high-risk situations, such as making clinical decisions or appraising biomedical research. Towards this, in our pilot task organized at TREC 2024, we introduced the task of reference attribution as a means to mitigate the generation of false statements by LLMs toward answering the biomedical question. 
-
-
-We propose to continue this task with an additional task of grounding the answer in the BioGen track at TREC 2025. The goal of the TREC 2025 BioGen task will be to cite references to support the text of the sentences and the overall answer from LLM output for each topic.
-<!--more-->
-
-<!-- This site is a demo of the Hugo Blox Documentation theme. For the full documentation on how to use this template, refer to the [Hugo Blox Documentation](https://docs.hugoblox.com/). -->
-
-
-## Timeline
-
-**Dataset Release** 22nd May, 2025  
-**Baseline Release:** 29nd May, 2025 
-**Results Submission Deadline:** August 15, 2025  
-**Evaluation Results Release:** Late September, 2025  
-**Notebook Paper Due:** Late October, 2025  
-**TREC 2025 Conference:** November 17-21 at NIST in Gaithersburg, MD, USA
-
-
-## Task Description
-
-1. **Task A (Grounding Answer):** Given a biomedical question, a stable version of PubMed documents, and an answer to the question, the task is to ground each sentence of the answer with appropriate PubMed documents by providing their PMIDs. For each answer sentence, you will also be provided with slightly outdated supporting PMIDs. The system-generated PMIDs should include additional relevant documents. Since identifying contradictory references is also crucial in the biomedical domain, the system is also expected to provide PMIDs that contradict the assertions made in each answer sentence. This task serves as a foundational step, preparing participants to effectively tackle the more complex task of Reference Attribution (Task B).
-
-For each answer sentence, the provided PMIDs should meet the following requirements:
-- The supporting PMIDs should be additional to the existing supported PMIDs already provided with each answer sentence.
-- There should be no more than three PMIDs per answer sentence for both supporting and contradicting assertions.
-- The PMIDs must be selected only from the valid set of PMIDs released with the dataset.
-
-One submission (run) should be a UTF-8-encoded JSONL file, with each line being a JSON object for a question-answer pair. Participants should follow this format and submit their runs to NIST via <a href="https://ir.nist.gov/evalbase/" target="_blank">Evalbase</a>.
-```json
-{
-  "metadata": {
-    "team_id": "organizers",
-    "run_id": "organizers-run-example", 
-    "qa_id": "biogen_2024_1",
-    "question": "question",
-    "existing_supported_citations": [
-    "PMID1",
-    "PMID2"
-    ]
-  },
-  "answers": [
-    {
-      "text": "This is the first sentence.",
-      "supported_citations": [
-        "PMID3",
-        "PMID4",
-      ],
-      "contradicted_citations": [
-        "PMID5",
-        "PMID6",
-      ]
-    },
-    {
-      "text": "This is the second sentence.",
-       "supported_citations": [],
-       "contradicted_citations": [
-        "PMID7",
-        "PMID8",
-      ]
-   }
-  ]
-}
-```
-Above is an example line from the final JSONL run file, with the following fields:
-- `metadata`: Metadata for this run.
-- `team_id`: Unique identifier for the team.
-- `run_id`: Unique identifier for the run, specifying both the team and the method used. Each run must have a different `run_id`, and all `run_id`s submitted by the same team should share a common prefix to associate them with the team.
-- `qa_id`: The `id` of the question-answer pair.
-- `question`: The `question` of the question-answer pair.
-- `existing_supported_citations`: A list containing all the existing supported citations.
-- `answers`: A list of objects, each representing an answer sentence with:
-  - `text`: An answer sentence in plaintext. 
-  - `supported_citations`: A list of up to 3 PMIDs (should not be in the  `existing_supported_citations`) that support this answer sentence.
-  - `contradicted_citations`: A list of up to 3 PMIDs that contradict this answer sentence.
-
-
-
-
-2. **Task B (Reference Attribution):**  Given a biomedical topic (question) and a stable version of PubMed documents. The task will be to generate answers containing LLM output that also has attributions (cited references frpm PubMed) for each sentence (assertion) made.
-
-The generated answer must meet the following requirements:
-- The total length of the generated answer should be **within 250 words**.
-- There should be no more than three PMIDs per answer sentence.
-- The PMIDs must be selected only from the valid set of PMIDs released with the dataset.
-
-One submission (run) should be a UTF-8-encoded JSONL file, with each line being a JSON object for a topic. Participants should follow this format and submit their runs to NIST via <a href="https://ir.nist.gov/evalbase/" target="_blank">Evalbase</a>.
-```json
-{
-  "metadata": {
-    "team_id": "organizers",
-    "run_id": "organizers-run-example", 
-    "topic_id": "biogen_2025_1"
-  },
-  "responses": [
-    {
-      "text": "This is the first sentence.",
-      "citations": [
-        "PMID1",
-        "PMID2",
-        "PMID3",
-      ]
-    },
-    {
-      "text": "This is the second sentence.",
-       "citations": [
-          "PMID4",
-          "PMID5",
-       ]
-   }
-  ]
-}
-```
-Above is an example line from the final JSONL run file, with the following fields:
-- `metadata`: Metadata for this run.
-- `team_id`: Unique identifier for the team.
-- `run_id`: Unique identifier for the run, specifying both the team and the method used. Each run must have a different `run_id`, and all `run_id`s submitted by the same team should share a common prefix to associate them with the team.
-- `topic_id`: The `id` of the topic.
-- `responses`: A list of objects, each representing a generated answer sentence with:
-  - `text`: One generated answer sentence in plaintext.. 
-  - `citations`: A list of up to 3 PMIDs that support this answer sentence. The citations for a sentence may be empty, and their order does not matter.
-
-
-## Dataset
-The latest PubMed baseline, questio-answer pairs (Task A), and topics (task B) will be available from the [TREC Active Participants Site](https://trec.nist.gov/act_part/act_part.html). The particvipant can use [BioGen 2024 assessment](https://pages.nist.gov/trec-browser/trec33/biogen/data/) to develope their system.
-
-## Participation
-Please follow the TREC 2025 registration guidelines from their <a href="https://trec.nist.gov/cfp.html" target="_blank">Call for Participation</a>. 
-
-## Coomunication
-Once you complete the NIST registration process, you should receive an invitation to NIST’s workspace and be granted access to our slack channel: <a href="https://nistgov.slack.com/archives/C08BU4AF3HB" target="_blank">#trec-biogen-2025</a>. You can also join our Google group [here](https://groups.google.com/g/trec-biogen). T
-
-
-## Evaluation
-1. **Task A:**
-TBA
-
-2. **Task B (Reference Attribution):**
-We will follow the evaluation approach used in BioGen 2024. More details can be found [here](https://arxiv.org/abs/2411.18069)
-
-
-
-## Organizers
-
-## Other RAG-related Tracks in TREC 2025
-
-There are other tracks in TREC 2025 that feature RAG tasks, with a similar submission format to encourage cross-participation. Participants are welcome to adapt their RAG systems for those tracks to explore their performance across diverse scenarios.
-
-- <a href="https://trec-rag.github.io/" target="_blank">TREC 2025 Retrieval-Augmented Generation Track</a>
-- <a href="https://trec-ragtime.github.io/" target="_blank">TREC 2025 RAGTIME Track</a>
-- <a href="https://www.trecikat.com/" target="_blank">TREC 2025 Interactive Knowledge Assistance Track (iKAT)</a>
-- <a href="https://trec-dragun.github.io/" target="_blank">TREC 2025 DRAGUN Track (DRAGUN)</a>
