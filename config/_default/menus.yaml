@@ -3,7 +3,7 @@
 
 main:
   - name: Home
-    url: /
+    url: https://trec-biogen.github.io/
     weight: 10
   - name: Contact
     url: contact/
