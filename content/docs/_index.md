@@ -134,7 +134,7 @@ The latest PubMed baseline, questio-answer pairs (Task A), and topics (task B) w
 ## Participation
 Please follow the TREC 2025 registration guidelines from their <a href="https://trec.nist.gov/cfp.html" target="_blank">Call for Participation</a>. 
 
-## Coomunication
+## Communication
 Once you complete the NIST registration process, you should receive an invitation to NIST’s workspace and be granted access to our slack channel: <a href="https://nistgov.slack.com/archives/C08BU4AF3HB" target="_blank">#trec-biogen-2025</a>. You can also join our Google group [here](https://groups.google.com/g/trec-biogen). T
 
 
@@ -148,6 +148,11 @@ We will follow the evaluation approach used in BioGen 2024. More details can be 
 
 
 ## Organizers
+- [**Deepak Gupta**](https://deepaknlp.github.io/) - National Library of Medicine, NIH
+- [**Dina Demner-Fushman**](https://www.nlm.nih.gov/research/researchstaff/DemnerFushmanDina.html) - National Library of Medicine, NIH
+- [**Bill Hersh**](https://www.ohsu.edu/people/william-r-hersh-md) - Oregon Health & Science University
+- [**Steven Bedrick**](https://www.ohsu.edu/people/steven-d-bedrick-phd) - Oregon Health & Science University
+- [**Kirk Roberts**](https://sbmi.uth.edu/center-translational-ai/people/kirk-roberts.htm) - University of Texas Houston
 
 ## Other RAG-related Tracks in TREC 2025
 

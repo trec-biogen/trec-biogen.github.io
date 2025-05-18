@@ -11,7 +11,7 @@ sections:
   - block: hero
     content:
       title: 'TREC 2025 Biomedical Generative Retrieval (BioGen) Track'
-      text: TREC 2025 Biomedical Generative Retrieval (BioGen) Track
+      text: ''
       primary_action:
         text: Read the docs
         url: /docs/
