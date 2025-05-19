@@ -29,7 +29,7 @@ We propose to continue this task with an additional task of grounding the answer
 **Task A (Grounding Answer):** Given a biomedical question, a stable version of PubMed documents, and an answer to the question, the task is to ground each sentence of the answer with appropriate PubMed documents by providing their PMIDs. For each answer sentence, you will also be provided with slightly outdated supporting PMIDs. The system-generated PMIDs should include additional relevant documents. Since identifying contradictory references is also crucial in the biomedical domain, the system is also expected to provide PMIDs that contradict the assertions made in each answer sentence. This task serves as a foundational step, preparing participants to effectively tackle the more complex task of Reference Attribution (Task B).
 
 For each answer sentence, the provided PMIDs should meet the following requirements:
-- The supporting PMIDs should be additional to the existing supported PMIDs already provided with each answer sentence.
+- The supporting PMIDs should be addition to the existing supported PMIDs already provided with each answer sentence.
 - There should be no more than three PMIDs per answer sentence for both supporting and contradicting assertions.
 - The PMIDs must be selected only from the valid set of PMIDs released with the dataset.
 
@@ -46,7 +46,7 @@ One submission (run) should be a UTF-8-encoded JSONL file, with each line being 
     "PMID2"
     ]
   },
-  "answers": [
+  "answer": [
     {
       "text": "This is the first sentence.",
       "supported_citations": [
@@ -76,14 +76,14 @@ Above is an example line from the final JSONL run file, with the following field
 - **qa_id**: The **id** of the question-answer pair.
 - **question**: The **question** of the question-answer pair.
 - **existing_supported_citations**: A list containing all the existing supported citations.
-- **answers**: A list of objects, each representing an answer sentence with:
+- **answer**: A list of objects, each representing an answer sentence with:
   - **text**: An answer sentence in plaintext. 
   - **supported_citations**: A list of up to 3 PMIDs (should not be in the  **existing_supported_citations**) that support this answer sentence.
   - **contradicted_citations**: A list of up to 3 PMIDs that contradict this answer sentence.
 
 
 
-**Task B (Reference Attribution):**  Given a biomedical topic (question) and a stable version of PubMed documents. The task will be to generate answers containing LLM output that also has attributions (cited references frpm PubMed) for each sentence (assertion) made.
+**Task B (Reference Attribution):**  Given a biomedical topic (question) and a stable version of PubMed documents. The task will be to generate answers containing LLM output that also has attributions (cited references from PubMed) for each sentence (assertion) made.
 
 The generated answer must meet the following requirements:
 - The total length of the generated answer should be **within 250 words**.
@@ -128,13 +128,13 @@ Above is an example line from the final JSONL run file, with the following field
 
 
 ## Datasets
-The latest PubMed baseline, questio-answer pairs (Task A), and topics (Task B) will be available from the [TREC Active Participants Site](https://trec.nist.gov/act_part/act_part.html). The particvipant can use [BioGen 2024 assessment](https://pages.nist.gov/trec-browser/trec33/biogen/data/) to develope their system.
+The latest PubMed baseline, question-answer pairs (Task A), and topics (Task B) will be available from the [TREC Active Participants Site](https://trec.nist.gov/act_part/act_part.html). The participant can use the [BioGen 2024 assessment](https://pages.nist.gov/trec-browser/trec33/biogen/data/) to develop their systems.
 
 ## Participation
 Please follow the TREC 2025 registration guidelines from their <a href="https://trec.nist.gov/cfp.html" target="_blank">Call for Participation</a>. 
 
 ## Communication
-Once you complete the NIST registration process, you should receive an invitation to NIST’s workspace and be granted access to our slack channel: <a href="https://nistgov.slack.com/archives/C08BU4AF3HB" target="_blank">#trec-biogen-2025</a>. You can also join our Google group [here](https://groups.google.com/g/trec-biogen). T
+Once you complete the NIST registration process, you should receive an invitation to NIST’s workspace and be granted access to our Slack channel: <a href="https://nistgov.slack.com/archives/C08BU4AF3HB" target="_blank">#trec-biogen-2025</a>. You can also join our Google group [here](https://groups.google.com/g/trec-biogen).
 
 
 ## Evaluation
