@@ -128,7 +128,7 @@ Above is an example line from the final JSONL run file, with the following field
 
 
 ## Datasets
-The latest PubMed baseline, question-answer pairs (Task A), and topics (Task B) will be available from the [TREC Active Participants Site](https://trec.nist.gov/act_part/act_part.html). The participant can use the [BioGen 2024 assessment](https://pages.nist.gov/trec-browser/trec33/biogen/data/) to develop their systems.
+The latest PubMed baseline, question-answer pairs (Task A), and topics (Task B) will be available from the [TREC Active Participants Site](https://trec.nist.gov/act_part/act_part.html). The participants can use the [BioGen 2024 assessment](https://pages.nist.gov/trec-browser/trec33/biogen/data/) to develop their systems.
 
 ## Participation
 Please follow the TREC 2025 registration guidelines from their <a href="https://trec.nist.gov/cfp.html" target="_blank">Call for Participation</a>. 
