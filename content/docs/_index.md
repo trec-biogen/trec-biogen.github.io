@@ -4,14 +4,12 @@ title: TREC 2025 Biomedical Generative Retrieval (BioGen) Track
 ---
 
 ## Introduction
-<p style="text-align: justify;">
-
 With the advancement of large language models (LLMs), the biomedical domain has seen significant progress and improvement in multiple tasks such as biomedical question answering, lay language summarization of the biomedical literature, clinical note summation, etc. However, hallucinations or confabulations remain one of the key challenges when using LLMs in the biomedical domain. Inaccuracies may be particularly harmful in high-risk situations, such as making clinical decisions or appraising biomedical research. Towards this, in our pilot task organized at TREC 2024, we introduced the task of reference attribution as a means to mitigate the generation of false statements by LLMs toward answering the biomedical question. 
-</p>
 
-<p style="text-align: justify;">
+
+
 We propose to continue this task with an additional task of grounding the answer in the BioGen track at TREC 2025. The goal of the TREC 2025 BioGen task will be to cite references to support the text of the sentences and the overall answer from LLM output for each topic.
-</p>
+
 <!--more-->
 
 <!-- This site is a demo of the Hugo Blox Documentation theme. For the full documentation on how to use this template, refer to the [Hugo Blox Documentation](https://docs.hugoblox.com/). -->
@@ -28,9 +26,8 @@ We propose to continue this task with an additional task of grounding the answer
 
 
 ## Task Description
-<p style="text-align: justify;">
-1. **Task A (Grounding Answer):** Given a biomedical question, a stable version of PubMed documents, and an answer to the question, the task is to ground each sentence of the answer with appropriate PubMed documents by providing their PMIDs. For each answer sentence, you will also be provided with slightly outdated supporting PMIDs. The system-generated PMIDs should include additional relevant documents. Since identifying contradictory references is also crucial in the biomedical domain, the system is also expected to provide PMIDs that contradict the assertions made in each answer sentence. This task serves as a foundational step, preparing participants to effectively tackle the more complex task of Reference Attribution (Task B).
-</p>
+**Task A (Grounding Answer):** Given a biomedical question, a stable version of PubMed documents, and an answer to the question, the task is to ground each sentence of the answer with appropriate PubMed documents by providing their PMIDs. For each answer sentence, you will also be provided with slightly outdated supporting PMIDs. The system-generated PMIDs should include additional relevant documents. Since identifying contradictory references is also crucial in the biomedical domain, the system is also expected to provide PMIDs that contradict the assertions made in each answer sentence. This task serves as a foundational step, preparing participants to effectively tackle the more complex task of Reference Attribution (Task B).
+
 For each answer sentence, the provided PMIDs should meet the following requirements:
 - The supporting PMIDs should be additional to the existing supported PMIDs already provided with each answer sentence.
 - There should be no more than three PMIDs per answer sentence for both supporting and contradicting assertions.
@@ -86,9 +83,8 @@ Above is an example line from the final JSONL run file, with the following field
 
 
 
-<p style="text-align: justify;">
-2. **Task B (Reference Attribution):**  Given a biomedical topic (question) and a stable version of PubMed documents. The task will be to generate answers containing LLM output that also has attributions (cited references frpm PubMed) for each sentence (assertion) made.
-</p>
+**Task B (Reference Attribution):**  Given a biomedical topic (question) and a stable version of PubMed documents. The task will be to generate answers containing LLM output that also has attributions (cited references frpm PubMed) for each sentence (assertion) made.
+
 The generated answer must meet the following requirements:
 - The total length of the generated answer should be **within 250 words**.
 - There should be no more than three PMIDs per answer sentence.
@@ -131,7 +127,7 @@ Above is an example line from the final JSONL run file, with the following field
   - **citations**: A list of up to 3 PMIDs that support this answer sentence. The citations for a sentence may be empty, and their order does not matter.
 
 
-## Dataset
+## Datasets
 The latest PubMed baseline, questio-answer pairs (Task A), and topics (Task B) will be available from the [TREC Active Participants Site](https://trec.nist.gov/act_part/act_part.html). The particvipant can use [BioGen 2024 assessment](https://pages.nist.gov/trec-browser/trec33/biogen/data/) to develope their system.
 
 ## Participation
@@ -158,9 +154,7 @@ We will follow the evaluation approach used in BioGen 2024. More details can be 
 - [**Kirk Roberts**](https://sbmi.uth.edu/center-translational-ai/people/kirk-roberts.htm) - University of Texas Houston
 
 ## Other RAG-related Tracks in TREC 2025
-<p style="text-align: justify;">
 There are other tracks in TREC 2025 that feature RAG tasks, with a similar submission format to encourage cross-participation. Participants are welcome to adapt their RAG systems for those tracks to explore their performance across diverse scenarios.
-</p>
 - <a href="https://trec-rag.github.io/" target="_blank">TREC 2025 Retrieval-Augmented Generation Track</a>
 - <a href="https://trec-ragtime.github.io/" target="_blank">TREC 2025 RAGTIME Track</a>
 - <a href="https://www.trecikat.com/" target="_blank">TREC 2025 Interactive Knowledge Assistance Track (iKAT)</a>
