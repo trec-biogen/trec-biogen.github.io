@@ -33,7 +33,7 @@ For each answer sentence, the provided PMIDs should meet the following requireme
 - There should be no more than three new PMIDs per answer sentence for both supporting and contradicting sentences. Contradicting assertions are more important, so if your system finds both supporting and contradicting PMIDs, provide the contradicting ones first. 
 - The PMIDs must be selected only from the valid set of PMIDs released with the dataset.
 
-One submission (run) should be a UTF-8-encoded JSONL file, with each line being a JSON object for a question-answer pair. Participants should follow this format and submit their runs to NIST via <a href="https://ir.nist.gov/evalbase/" target="_blank">Evalbase</a>.
+One submission (run) should be a UTF-8-encoded JSONL file, with each line being a JSON object for a question-answer pair. The participants can submit upto ten (10) runs for the task. Participants should follow this format and submit their runs to NIST via <a href="https://ir.nist.gov/evalbase/" target="_blank">Evalbase</a>.
 ```json
 {
   "metadata": {
@@ -90,7 +90,7 @@ The generated answer must meet the following requirements:
 - There should be no more than three PMIDs per answer sentence.
 - The PMIDs must be selected only from the valid set of PMIDs released with the dataset.
 
-One submission (run) should be a UTF-8-encoded JSONL file, with each line being a JSON object for a topic. Participants should follow this format and submit their runs to NIST via <a href="https://ir.nist.gov/evalbase/" target="_blank">Evalbase</a>.
+One submission (run) should be a UTF-8-encoded JSONL file, with each line being a JSON object for a topic. The participants can submit upto ten (10) runs for the task. Participants should follow this format and submit their runs to NIST via <a href="https://ir.nist.gov/evalbase/" target="_blank">Evalbase</a>.
 ```json
 {
   "metadata": {
