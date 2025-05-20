@@ -13,7 +13,7 @@ sections:
       title: 'TREC 2025 Biomedical Generative Retrieval (BioGen) Track'
       text: ''
       primary_action:
-        text: Read the docs
+        text: Read the guidelines
         url: /docs/
         icon: rocket-launch
       # secondary_action:
