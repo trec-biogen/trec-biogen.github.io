@@ -26,11 +26,11 @@ We propose to continue this task with an additional task of grounding the answer
 
 
 ## Task Description
-**Task A (Grounding Answer):** Given a biomedical question, a stable version of PubMed documents, and an answer to the question, the task is to ground each sentence of the answer with appropriate PubMed documents by providing their PMIDs. For each answer sentence, you will also be provided with slightly outdated supporting PMIDs. The system-generated PMIDs should include additional relevant documents. Since identifying contradictory references is also crucial in the biomedical domain, the system is also expected to provide PMIDs that contradict the assertions made in each answer sentence. This task serves as a foundational step, preparing participants to effectively tackle the more complex task of Reference Attribution (Task B).
+**Task A (Grounding Answer):** Given a biomedical question, a stable version of PubMed documents, and an answer to the question, the task is to ground each sentence of the answer with appropriate PubMed documents by providing their PMIDs. For each answer sentence, you will also be provided with slightly outdated supporting PMIDs. The system-generated PMIDs should include additional relevant documents. Since identifying contradictory references is also crucial in the biomedical domain, the system is also expected to provide PMIDs that contradict the statements made in each answer sentence. This task serves as a foundational step, preparing participants to effectively tackle the more complex task of Reference Attribution (Task B).
 
 For each answer sentence, the provided PMIDs should meet the following requirements:
-- The supporting PMIDs should be addition to the existing supported PMIDs already provided with each answer sentence.
-- There should be no more than three PMIDs per answer sentence for both supporting and contradicting assertions.
+- The supporting PMIDs should be provided in addition to the existing supporting PMIDs already provided with each answer sentence.
+- There should be no more than three new PMIDs per answer sentence for both supporting and contradicting sentences. Contradicting assertions are more important, so if your system finds both supporting and contradicting PMIDs, provide the contradicting ones first. 
 - The PMIDs must be selected only from the valid set of PMIDs released with the dataset.
 
 One submission (run) should be a UTF-8-encoded JSONL file, with each line being a JSON object for a question-answer pair. Participants should follow this format and submit their runs to NIST via <a href="https://ir.nist.gov/evalbase/" target="_blank">Evalbase</a>.
@@ -83,7 +83,7 @@ Above is an example line from the final JSONL run file, with the following field
 
 
 
-**Task B (Reference Attribution):**  Given a biomedical topic (question) and a stable version of PubMed documents. The task will be to generate answers containing LLM output that also has attributions (cited references from PubMed) for each sentence (assertion) made.
+**Task B (Reference Attribution):**  Given a biomedical topic (question) and a stable version of PubMed documents. The task will be to generate answers containing LLM output that also has attributions (cited references from PubMed) for each answer sentence.
 
 The generated answer must meet the following requirements:
 - The total length of the generated answer should be **within 250 words**.
