@@ -17,8 +17,8 @@ We propose to continue this task with an additional task of grounding the answer
 
 ## Timeline
 
-**Dataset Release:** May 22, 2025  
-**Baseline Release:** May 29, 2025  
+**Dataset Release:** June 2, 2025  
+**Baseline Release:** June 2, 2025  
 **Results Submission Deadline:** August 15, 2025  
 **Evaluation Results Release:** Late September, 2025  
 **Notebook Paper Due:** Late October, 2025  
@@ -26,11 +26,11 @@ We propose to continue this task with an additional task of grounding the answer
 
 
 ## Task Description
-**Task A (Grounding Answer):** Given a biomedical question, a stable version of PubMed documents, and an answer to the question, the task is to ground each sentence of the answer with appropriate PubMed documents by providing their PMIDs. For each answer sentence, you will also be provided with slightly outdated supporting PMIDs. The system-generated PMIDs should include additional relevant documents. Since identifying contradictory references is also crucial in the biomedical domain, the system is also expected to provide PMIDs that contradict the statements made in each answer sentence. This task serves as a foundational step, preparing participants to effectively tackle the more complex task of Reference Attribution (Task B).
+**Task A (Grounding Answer):** Given a biomedical question, a stable version of PubMed documents, and an assertion to the question, the task is to ground each assertion of the answer with appropriate PubMed documents by providing their PMIDs. For each answer assertion, you will also be provided with slightly outdated supporting PMIDs. The system-generated PMIDs should include additional relevant documents. Since identifying contradictory references is also crucial in the biomedical domain, the system is also expected to provide PMIDs that contradict the statements made in each answer assertion. This task serves as a foundational step, preparing participants to effectively tackle the more complex task of Reference Attribution (Task B).
 
-For each answer sentence, the provided PMIDs should meet the following requirements:
-- The supporting PMIDs should be provided in addition to the existing supporting PMIDs already provided with each answer sentence.
-- There should be no more than three new PMIDs per answer sentence for both supporting and contradicting sentences. Contradicting assertions are more important, so if your system finds both supporting and contradicting PMIDs, provide the contradicting ones first. 
+For each answer assertion, the provided PMIDs should meet the following requirements:
+- The supporting PMIDs should be provided in addition to the existing supporting PMIDs already provided with each answer assertion.
+- There should be no more than three new PMIDs per answer assertion for both supporting and contradicting assertions. Contradicting assertions are more important, so if your system finds both supporting and contradicting PMIDs, provide the contradicting ones first. 
 - The PMIDs must be selected only from the valid set of PMIDs released with the dataset.
 
 One submission (run) should be a UTF-8-encoded JSONL file, with each line being a JSON object for a question-answer pair. The participants can submit upto ten (10) runs for the task. Participants should follow this format and submit their runs to NIST via <a href="https://ir.nist.gov/evalbase/" target="_blank">Evalbase</a>.
@@ -40,30 +40,28 @@ One submission (run) should be a UTF-8-encoded JSONL file, with each line being 
     "team_id": "organizers",
     "run_id": "organizers-run-example", 
     "qa_id": "biogen_2024_1",
-    "question": "question",
-    "existing_supported_citations": [
-    "PMID1",
-    "PMID2"
-    ]
+    "question": "question"
   },
   "answer": [
     {
       "text": "This is the first sentence.",
+      "existing_supported_citations": ["PMID1", "PMID2"],
       "supported_citations": [
         "PMID3",
-        "PMID4",
+        "PMID4"
       ],
       "contradicted_citations": [
         "PMID5",
-        "PMID6",
+        "PMID6"
       ]
     },
     {
       "text": "This is the second sentence.",
+       "existing_supported_citations": ["PMID7", "PMID8"],
        "supported_citations": [],
        "contradicted_citations": [
-        "PMID7",
-        "PMID8",
+        "PMID9",
+        "PMID10"
       ]
    }
   ]
@@ -75,11 +73,11 @@ Above is an example line from the final JSONL run file, with the following field
 - **run_id**: Unique identifier for the run, specifying both the team and the method used. Each run must have a different **run_id**, and all **run_ids** submitted by the same team should share a common prefix to associate them with the team.
 - **qa_id**: The **id** of the question-answer pair.
 - **question**: The **question** of the question-answer pair.
-- **existing_supported_citations**: A list containing all the existing supported citations.
-- **answer**: A list of objects, each representing an answer sentence with:
-  - **text**: An answer sentence in plaintext. 
-  - **supported_citations**: A list of up to 3 PMIDs (should not be in the  **existing_supported_citations**) that support this answer sentence.
-  - **contradicted_citations**: A list of up to 3 PMIDs that contradict this answer sentence.
+- **answer**: A list of objects, each representing an answer assertion with:
+  - **text**: An answer assertion in plaintext. 
+  - **existing_supported_citations**: A list containing all the existing supported citations for the given text.
+  - **supported_citations**: A list of up to 3 PMIDs (should not be in the  **existing_supported_citations**) that support this answer assertion.
+  - **contradicted_citations**: A list of up to 3 PMIDs that contradict this answer assertion.
 
 
 
@@ -104,14 +102,14 @@ One submission (run) should be a UTF-8-encoded JSONL file, with each line being 
       "citations": [
         "PMID1",
         "PMID2",
-        "PMID3",
+        "PMID3"
       ]
     },
     {
       "text": "This is the second sentence.",
        "citations": [
           "PMID4",
-          "PMID5",
+          "PMID5"
        ]
    }
   ]

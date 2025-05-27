@@ -27,5 +27,9 @@ sidebar:
     weight: 3
   - identifier: BioGen 2024
     name: "BioGen 2024"
-    pageRef: "https://dmice.ohsu.edu/trec-biogen/"
+    url: "https://dmice.ohsu.edu/trec-biogen/"
+    weight: 2
+  - identifier: TREC Biomedical Tracks
+    name: "TREC Biomedical Tracks"
+    url: "https://www.trec-cds.org/"
     weight: 2
