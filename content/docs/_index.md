@@ -126,8 +126,7 @@ Above is an example line from the final JSONL run file, with the following field
 
 
 ## Datasets
-# Corpus
-We are using the latest [PubMed baseline](https://ftp.ncbi.nlm.nih.gov/pubmed/baseline/) as our corpus to retrieve relevant documents. The processed corpus can be downloaded from [here](http://bionlp.nlm.nih.gov/biogen-2025-document-collection.zip). The [starter kit](https://github.com/trec-biogen/starter-kit-2025) includes a script to automatically download the processed corpus and index it using PySerini.
+**Corpus**: We are using the latest [PubMed baseline](https://ftp.ncbi.nlm.nih.gov/pubmed/baseline/) as our corpus to retrieve relevant documents. The processed corpus can be downloaded from [here](http://bionlp.nlm.nih.gov/biogen-2025-document-collection.zip). The [starter kit](https://github.com/trec-biogen/starter-kit-2025) includes a script to automatically download the processed corpus and index it using PySerini.
 
 
 The question-answer pairs (Task A) and topics (Task B) will be available from the [TREC Active Participants Site](https://trec.nist.gov/act_part/act_part.html). The participants can use the [BioGen 2024 assessment](https://pages.nist.gov/trec-browser/trec33/biogen/data/) to develop their systems.
