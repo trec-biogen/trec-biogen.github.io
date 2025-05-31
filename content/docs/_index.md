@@ -26,12 +26,12 @@ We propose to continue this task with an additional task of grounding the answer
 
 
 ## Task Description
-**Task A (Grounding Answer):** Given a biomedical question, a stable version of PubMed documents, and an assertion to the question, the task is to ground each assertion of the answer with appropriate PubMed documents by providing their PMIDs. For each answer assertion, you will also be provided with slightly outdated supporting PMIDs. The system-generated PMIDs should include additional relevant documents. Since identifying contradictory references is also crucial in the biomedical domain, the system is also expected to provide PMIDs that contradict the statements made in each answer assertion. This task serves as a foundational step, preparing participants to effectively tackle the more complex task of Reference Attribution (Task B).
+**Task A (Grounding Answer):** Given a biomedical question, a stable version of PubMed documents, and an answer sentence to the question, the task is to ground each sentence of the answer with appropriate PubMed documents by providing their PMIDs. For each answer sentence, you will also be provided with slightly outdated supporting PMIDs. The system-generated PMIDs should include additional relevant documents. Since identifying contradictory references is also crucial in the biomedical domain, the system is also expected to provide PMIDs that contradict the statements made in each answer sentence. This task serves as a foundational step, preparing participants to effectively tackle the more complex task of Reference Attribution (Task B).
 
-For each answer assertion, the provided PMIDs should meet the following requirements:
-- The supporting PMIDs should be provided in addition to the existing supporting PMIDs already provided with each answer assertion.
-- There should be no more than three new PMIDs per answer assertion for both supporting and contradicting assertions. Contradicting assertions are more important, so if your system finds both supporting and contradicting PMIDs, provide the contradicting ones first. 
-- The PMIDs must be selected only from the valid set of PMIDs released with the dataset.
+For each answer sentence, the provided PMIDs should meet the following requirements:
+- The supporting PMIDs should be provided in addition to the existing supporting PMIDs already provided with each answer sentence.
+- There should be no more than three new PMIDs per answer sentence for both supporting and contradicting assertions. Contradicting assertions are more important, so if your system finds both supporting and contradicting PMIDs, provide the contradicting ones first. 
+- The PMIDs must be selected only from the valid set of PubMed corpus released with the dataset.
 
 One submission (run) should be a UTF-8-encoded JSONL file, with each line being a JSON object for a question-answer pair. The participants can submit upto ten (10) runs for the task. Participants should follow this format and submit their runs to NIST via <a href="https://ir.nist.gov/evalbase/" target="_blank">Evalbase</a>.
 ```json
@@ -73,11 +73,11 @@ Above is an example line from the final JSONL run file, with the following field
 - **run_id**: Unique identifier for the run, specifying both the team and the method used. Each run must have a different **run_id**, and all **run_ids** submitted by the same team should share a common prefix to associate them with the team.
 - **qa_id**: The **id** of the question-answer pair.
 - **question**: The **question** of the question-answer pair.
-- **answer**: A list of objects, each representing an answer assertion with:
-  - **text**: An answer assertion in plaintext. 
+- **answer**: A list of objects, each representing an answer sentence with:
+  - **text**: An answer sentence in plaintext. 
   - **existing_supported_citations**: A list containing all the existing supported citations for the given text.
-  - **supported_citations**: A list of up to 3 PMIDs (should not be in the  **existing_supported_citations**) that support this answer assertion.
-  - **contradicted_citations**: A list of up to 3 PMIDs that contradict this answer assertion.
+  - **supported_citations**: A list of up to 3 PMIDs (should not be in the  **existing_supported_citations**) that support this answer sentence.
+  - **contradicted_citations**: A list of up to 3 PMIDs that contradict this answer sentence.
 
 
 
@@ -86,7 +86,7 @@ Above is an example line from the final JSONL run file, with the following field
 The generated answer must meet the following requirements:
 - The total length of the generated answer should be **within 250 words**.
 - There should be no more than three PMIDs per answer sentence.
-- The PMIDs must be selected only from the valid set of PMIDs released with the dataset.
+- The PMIDs must be selected only from the valid set of PubMed corpus released with the dataset.
 
 One submission (run) should be a UTF-8-encoded JSONL file, with each line being a JSON object for a topic. The participants can submit upto ten (10) runs for the task. Participants should follow this format and submit their runs to NIST via <a href="https://ir.nist.gov/evalbase/" target="_blank">Evalbase</a>.
 ```json
@@ -126,7 +126,11 @@ Above is an example line from the final JSONL run file, with the following field
 
 
 ## Datasets
-The latest PubMed baseline, question-answer pairs (Task A), and topics (Task B) will be available from the [TREC Active Participants Site](https://trec.nist.gov/act_part/act_part.html). The participants can use the [BioGen 2024 assessment](https://pages.nist.gov/trec-browser/trec33/biogen/data/) to develop their systems.
+# Corpus
+We are using the latest [PubMed baseline](https://ftp.ncbi.nlm.nih.gov/pubmed/baseline/) as our corpus to retrieve relevant documents. The processed corpus can be downloaded from [here](http://bionlp.nlm.nih.gov/biogen-2025-document-collection.zip). The [starter kit](https://github.com/trec-biogen/starter-kit-2025) includes a script to automatically download the processed corpus and index it using PySerini.
+
+
+The question-answer pairs (Task A) and topics (Task B) will be available from the [TREC Active Participants Site](https://trec.nist.gov/act_part/act_part.html). The participants can use the [BioGen 2024 assessment](https://pages.nist.gov/trec-browser/trec33/biogen/data/) to develop their systems.
 
 ## Participation
 Please follow the TREC 2025 registration guidelines from their <a href="https://trec.nist.gov/cfp.html" target="_blank">Call for Participation</a>. 
