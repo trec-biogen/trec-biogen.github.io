@@ -30,7 +30,7 @@ We propose to continue this task with an additional task of grounding the answer
 
 
 <figure>
-  <img src="images/task-a.jpg" alt="Task A">
+  <img src="task-a.jpg" alt="Task A">
   <figcaption>Schematic workflow of the Task A.</figcaption>
 </figure>
 
@@ -91,7 +91,7 @@ Above is an example line from the final JSONL run file, with the following field
 **Task B (Reference Attribution):**  Given a biomedical topic (question) and a stable version of PubMed documents. The task will be to generate answers containing LLM output that also has attributions (cited references from PubMed) for each answer sentence.
 
 <figure>
-  <img src="images/task-b.jpg" alt="Task B">
+  <img src="task-b.jpg" alt="Task B">
   <figcaption>Schematic workflow of the Task B.</figcaption>
 </figure>
 
