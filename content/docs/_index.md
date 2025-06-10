@@ -28,6 +28,13 @@ We propose to continue this task with an additional task of grounding the answer
 ## Task Description
 **Task A (Grounding Answer):** Given a biomedical question, a stable version of PubMed documents, and an answer sentence to the question, the task is to ground each sentence of the answer with appropriate PubMed documents by providing their PMIDs. For each answer sentence, you will also be provided with slightly outdated supporting PMIDs. The system-generated PMIDs should include additional relevant documents. Since identifying contradictory references is also crucial in the biomedical domain, the system is also expected to provide PMIDs that contradict the statements made in each answer sentence. This task serves as a foundational step, preparing participants to effectively tackle the more complex task of Reference Attribution (Task B).
 
+
+<figure>
+  <img src="images/task-a.jpg" alt="Task A">
+  <figcaption>Schematic workflow of the Task A.</figcaption>
+</figure>
+
+
 For each answer sentence, the provided PMIDs should meet the following requirements:
 - The supporting PMIDs should be provided in addition to the existing supporting PMIDs already provided with each answer sentence.
 - There should be no more than three new PMIDs per answer sentence for both supporting and contradicting assertions. Contradicting assertions are more important, so if your system finds both supporting and contradicting PMIDs, provide the contradicting ones first. 
@@ -82,6 +89,11 @@ Above is an example line from the final JSONL run file, with the following field
 
 
 **Task B (Reference Attribution):**  Given a biomedical topic (question) and a stable version of PubMed documents. The task will be to generate answers containing LLM output that also has attributions (cited references from PubMed) for each answer sentence.
+
+<figure>
+  <img src="images/task-b.jpg" alt="Task B">
+  <figcaption>Schematic workflow of the Task B.</figcaption>
+</figure>
 
 The generated answer must meet the following requirements:
 - The total length of the generated answer should be **within 250 words**.
