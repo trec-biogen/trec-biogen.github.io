@@ -164,7 +164,7 @@ We will follow the evaluation approach used in BioGen 2024. More details can be 
 - [**Dina Demner-Fushman**](https://www.nlm.nih.gov/research/researchstaff/DemnerFushmanDina.html) - National Library of Medicine, NIH
 - [**Bill Hersh**](https://www.ohsu.edu/people/william-r-hersh-md) - Oregon Health & Science University
 - [**Steven Bedrick**](https://www.ohsu.edu/people/steven-d-bedrick-phd) - Oregon Health & Science University
-- [**Kirk Roberts**](https://sbmi.uth.edu/center-translational-ai/people/kirk-roberts.htm) - University of Texas Houston
+- [**Kirk Roberts**](https://sbmi.uth.edu/center-translational-ai/people/kirk-roberts.htm) - UTHealth Houston
 
 ## Other RAG-related Tracks in TREC 2025
 There are other tracks in TREC 2025 that feature RAG tasks, with a similar submission format to encourage cross-participation. Participants are welcome to adapt their RAG systems for those tracks to explore their performance across diverse scenarios.
